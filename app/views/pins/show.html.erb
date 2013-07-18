@@ -1,12 +1,18 @@
 <div class="row">
 	<div class="Span6 offset3">
 		<div class="well">
-<p>
-  <b>Description:</b>
+
+	<%= image_tag @pin.image %>
+<P>
   <%= @pin.description %>
 </p>
+<P>
+  <%= @pin.user.name %>
+</p>
+<% if current_user == @pin.user %>
 	<%= link_to 'Edit', edit_pin_path(@pin) %> |
 	<%= link_to 'Back', pins_path %>
+	<% end %>
 </div>
 </div>
 </div>
